@@ -1,38 +1,412 @@
+@import url(https://fonts.google.com/specimen/Spartan);
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(222, 26%, 31%);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(222, 26%, 31%);
+}
+
+.bk-color-2 {
+  background-color: hsl(0, 0%, 90%) !important;
+}
+
+.bk-color-3 {
+  background-color: hsl(268, 75%, 9%) !important;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 38vw;
+  min-width: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  margin: 10vh 0 3vh 0;
+
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav h1 {
+  font-size: 32px;
+  align-self: flex-end;
+  transform: translateY(4px);
+}
+
+.theme {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-end;
+}
+
+.theme p {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.theme-range {
+  width: 71px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-2px);
+}
+
+.theme-range ul {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.theme-range ul li:first-child {
+  margin-left: 10px;
+}
+
+.theme-range ul li:last-child {
+  margin-right: 10px;
+}
+
+.theme-range input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background-color: hsl(224, 36%, 15%); /* Otherwise white in Chrome */
+  border-radius: 16px;
+}
+
+.theme-range input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.theme-range input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  /* margin: 0 5px; */
+  border-radius: 50%;
+  background: hsl(6, 63%, 50%);
+  cursor: pointer;
+  margin-top: 5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  /* margin: 0 5px; */
+  border-radius: 50%;
+  background: hsl(6, 63%, 50%);
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  /* margin: 0 5px; */
+  border-radius: 50%;
+  background: hsl(6, 63%, 50%);
+  cursor: pointer;
+}
+
+.theme-range input[type=range]::-webkit-slider-runnable-track {
+  max-width: 100%;
+  height: 26px;
+  padding: 0 6px;
+  background: transparent;
+  border-radius: 26px;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 26px;
+  padding: 0 6px;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 26px;
+  padding: 0 6px;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+.App-header {
+  width: 100%;
+  height: 400px;
+}
+
+.App-screen {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 2.5vh;
+  border-radius: 16px;
+  background-color: hsl(224, 36%, 15%);
+  overflow: auto;
+}
+
+.App-screen input {
+  width: 100%;
+  text-align: end;
+  background-color: inherit;
+}
+
+.scr-color-2 {
+  background-color: hsl(0, 0%, 93%) !important;
+}
+
+.scr-color-3 {
+  background-color: hsl(268, 71%, 12%) !important;
+}
+
+.total {
+  max-width: 100%;
+  padding-right: 23px;
+  text-align: end;
+  color: hsl(30, 45%, 89%);
+  background-color: inherit;
+  font-size: 50px;
+}
+
+.text-color-2 {
+  color: hsl(60, 10%, 19%) !important;
+}
+
+.text-color-3 {
+  color: hsl(52, 100%, 62%) !important;
+}
+
+.grid {
+  max-width: 100%;
+  height: 53.5vh;
+  max-height: 484px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+      "seven eight nine delete"
+      "four five six add"
+      "one two three subtract"
+      "dis zero devide multifly"
+      "clear clear equals equals"
+  ;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: hsl(223, 31%, 20%);
+  align-items: center;
+  justify-items: center;
+}
+
+.contain-color-2 {
+  background-color: hsl(0, 5%, 81%) !important; 
+}
+
+.contain-color-3 {
+  background-color: hsl(268, 71%, 12%) !important; 
+}
+
+.padButton {
+  width: 83%;
+  min-width: 60px;
+  height: 60px;
+  /* margin: 10px 5px; */
+
+  font-size: 1.2rem;
+  font-weight:700;
+  color: hsl(223, 31%, 20%);
+  cursor: pointer;
+
+  border-radius: 16px;
+  box-shadow: 0 4px hsl(28, 16%, 65%);
+  background-color: hsl(30, 25%, 89%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-color-2 {
+  background-color: hsl(45, 7%, 89%) !important;
+  box-shadow: 0 4px hsl(35, 11%, 61%) !important;
+}
+
+.btn-color-2:active {
+  background-color: hsl(45, 7%, 89%) !important;
+  box-shadow: 0 1px hsl(35, 11%, 61%) !important;
+}
+
+.btn-color-3 {
+  background-color: hsl(268, 47%, 21%) !important;
+  box-shadow: 0 4px hsl(290, 70%, 36%) !important;
+}
+
+.btn-color-3:active {
+  background-color: hsl(268, 47%, 21%) !important;
+  box-shadow: 0 1px hsl(290, 70%, 36%) !important;
+}
+
+.padButton:active {
+  transform: translateY(3px) !important;
+}
+
+.maths {
+  background-color: hsl(30, 25%, 89%);
+  box-shadow: 0 4px hsl(30, 1%, 67%);
+}
+
+.maths:hover {background-color: hsl(30, 45%, 89%)}
+
+.maths:active {
+  background-color: hsl(30, 45%, 89%);
+  box-shadow: 0 1px hsl(30, 1%, 67%);
+}
+
+.control {
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0 4px hsl(224, 28%, 35%);
+}
+
+.control:hover {background-color: hsl(225, 41%, 49%)}
+
+.control:active {
+  background-color: hsl(225, 41%, 49%);
+  box-shadow: 0 1px hsl(224, 28%, 35%);
+}
+
+.ctrl-color-2 {
+  color: hsl(0, 0, 100%) !important;
+  background-color: hsl(185, 42%, 37%) !important;
+  box-shadow: 0 4px hsl(185, 58%, 25%) !important;
+}
+
+.ctrl-color-2:active {
+  box-shadow: 0 1px hsl(185, 58%, 25%) !important;
+}
+
+.ctrl-color-3 {
+  color: hsl(0, 0, 100%) !important;
+  background-color: hsl(185, 42%, 37%) !important;
+  box-shadow: 0 4px hsl(185, 58%, 25%) !important;
+}
+
+.ctrl-color-3:active {
+  box-shadow: 0 1px hsl(185, 58%, 25%) !important;
+}
+
+.result {
+  background-color: hsl(6, 63%, 50%);
+  box-shadow: 0 4px hsl(6, 70%, 34%);
+}
+
+.result:hover {background-color: hsl(6, 83%, 50%)}
+
+.result:active {
+  background-color: hsl(6, 83%, 50%);
+  box-shadow: 0 1px hsl(6, 70%, 34%);
+}
+
+.res-color-2 {
+  color: hsl(0, 0, 100%) !important;
+  background-color: hsl(25, 98%, 40%) !important;
+  box-shadow: 0 4px hsl(25, 99%, 27%) !important;
+}
+
+.res-color-2:active {
+  box-shadow: 0 1px hsl(25, 99%, 27%) !important;
+}
+
+.res-color-3 {
+  color: hsl(198, 20%, 13%) !important;
+  background-color: hsl(176, 100%, 44%) !important;
+  box-shadow: 0 4px hsl(177, 92%, 70%) !important;
+}
+
+.res-color-3:active {
+  box-shadow: 0 1px hsl(177, 92%, 70%) !important;
+}
+
+#delete {
+  color: hsl(30, 25%, 89%);
+}
+
+#clear {
+  width: 92%;
+  min-width: 133px;
+  grid-area: clear;
+  color: hsl(30, 25%, 89%);
+}
+
+#equals {
+  width: 92%;
+  min-width: 133px;
+  grid-area: equals;
+  color: hsl(30, 25%, 89%);
 }
